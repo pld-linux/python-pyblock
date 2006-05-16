@@ -1,0 +1,14 @@
+stupid define to get ULLONG_MAX
+and all because #include <limits.h> failed.
+
+--- pyblock-0.15/dmraid.c~	2006-05-16 23:45:09.807029651 +0300
++++ pyblock-0.15/dmraid.c	2006-05-16 23:45:12.027079592 +0300
+@@ -8,6 +8,8 @@
+ #define _GNU_SOURCE
+ #include <stdio.h>
+ 
++#define ULLONG_MAX	18446744073709551615ULL
++
+ #if 0
+ #define Py_REF_DEBUG 1
+ #endif
