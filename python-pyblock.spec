@@ -10,7 +10,6 @@ License:	GPL
 Group:		Libraries
 BuildRequires:	device-mapper >= 1.02.05-0.3
 BuildRequires:	dmraid-static
-BuildRequires:	gettext
 BuildRequires:	libselinux-devel
 BuildRequires:	libsepol-devel
 BuildRequires:	python-devel
