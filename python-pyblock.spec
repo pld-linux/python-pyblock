@@ -1,13 +1,15 @@
+# TODO: noarch or use %{py_sitedir} instead of %{py_sitescriptdir}???
 %define realname pyblock
 Summary:	Python modules for dealing with block devices
+Summary(pl):	Modu³y Pythona do obs³ugi urz±dzeñ blokowych
 Name:		python-%{realname}
 Version:	0.15
 Release:	1
+License:	GPL
+Group:		Libraries/Python
 Source0:	%{realname}-%{version}.tar.bz2
 # Source0-md5:	a201b09eb86a748b0d41bd5671e7ae8f
 Patch0:		python-pyblock-ULLLLLL.patch
-License:	GPL
-Group:		Libraries
 BuildRequires:	device-mapper >= 1.02.05-0.3
 BuildRequires:	dmraid-static
 BuildRequires:	libselinux-devel
@@ -20,6 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The pyblock contains Python modules for dealing with block devices.
+
+%description -l pl
+Pakiet pyblock zawiera modu³y Pythona do obs³ugi urz±dzeñ blokowych.
 
 %prep
 %setup -q -n %{realname}-%{version}
