@@ -1,14 +1,18 @@
+# TODO
+# - -O2 breaks build
+# - compile .py[co] and *package* them
 %define realname pyblock
 Summary:	Python modules for dealing with block devices
 Summary(pl):	Modu³y Pythona do obs³ugi urz±dzeñ blokowych
 Name:		python-%{realname}
 Version:	0.15
-Release:	1.1
+Release:	1.2
 License:	GPL
 Group:		Libraries/Python
 Source0:	%{realname}-%{version}.tar.bz2
 # Source0-md5:	a201b09eb86a748b0d41bd5671e7ae8f
 Patch0:		python-pyblock-ULLLLLL.patch
+Patch1:		python-pyblock-optflags.patch
 BuildRequires:	device-mapper >= 1.02.05-0.3
 BuildRequires:	dmraid-static
 BuildRequires:	libselinux-devel
@@ -28,9 +32,13 @@ Pakiet pyblock zawiera modu³y Pythona do obs³ugi urz±dzeñ blokowych.
 %prep
 %setup -q -n %{realname}-%{version}
 %patch0 -p1
+# passing -O2 will break build. blah
+#%patch1 -p1
 
 %build
-%{__make}
+%{__make} -j1 \
+	CC="%{__cc}" \
+	OPTFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
