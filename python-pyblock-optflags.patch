@@ -1,0 +1,12 @@
+--- pyblock-0.15/Makefile~	2006-02-23 05:32:15.000000000 +0200
++++ pyblock-0.15/Makefile	2006-05-20 04:14:11.030630136 +0300
+@@ -4,7 +4,8 @@
+ DEBUGSRC := "/usr/src/debug"
+ DEBUGLIB := "/usr/lib/debug"
+ CC := gcc
+-CFLAGS := -g -I/usr/include/python2.4 -Wall -Werror -fPIC
++OPTFLAGS := -g
++CFLAGS := $(OPTFLAGS) -I/usr/include/python2.4 -Wall -Werror -fPIC
+ LDFLAGS := -shared
+ 
+ VERSION = 0.15
