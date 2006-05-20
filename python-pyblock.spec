@@ -1,10 +1,9 @@
-# TODO: noarch or use %{py_sitedir} instead of %{py_sitescriptdir}???
 %define realname pyblock
 Summary:	Python modules for dealing with block devices
 Summary(pl):	Modu³y Pythona do obs³ugi urz±dzeñ blokowych
 Name:		python-%{realname}
 Version:	0.15
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		Libraries/Python
 Source0:	%{realname}-%{version}.tar.bz2
@@ -37,12 +36,12 @@ Pakiet pyblock zawiera modu³y Pythona do obs³ugi urz±dzeñ blokowych.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	SITELIB=%{py_sitescriptdir}
+	SITELIB=%{py_sitedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{py_sitescriptdir}/block
-%{py_sitescriptdir}/block/*
+%dir %{py_sitedir}/block
+%{py_sitedir}/block/*
