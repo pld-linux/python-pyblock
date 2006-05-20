@@ -3,7 +3,7 @@ Summary:	Python modules for dealing with block devices
 Summary(pl):	Modu³y Pythona do obs³ugi urz±dzeñ blokowych
 Name:		python-%{realname}
 Version:	0.15
-Release:	1.2
+Release:	1.4
 License:	GPL
 Group:		Libraries/Python
 Source0:	%{realname}-%{version}.tar.bz2
@@ -49,6 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
