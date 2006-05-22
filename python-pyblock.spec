@@ -11,13 +11,11 @@ Source0:	%{realname}-%{version}.tar.bz2
 Patch0:		%{name}-ULLLLLL.patch
 Patch1:		%{name}-optflags.patch
 Patch2:		%{name}-fix.patch
-BuildRequires:	device-mapper >= 1.02.05-0.3
-BuildRequires:	dmraid-static
+BuildRequires:	device-mapper-devel >= 1.02.05-0.3
+BuildRequires:	dmraid-devel >= 1.0.0-0.rc10.1.6
 BuildRequires:	libselinux-devel
-BuildRequires:	libsepol-devel
 BuildRequires:	python-devel
 Requires:	device-mapper >= 1.02.02
-Requires:	libselinux
 ExcludeArch:	s390 s390x
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
