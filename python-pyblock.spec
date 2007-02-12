@@ -1,6 +1,6 @@
 %define realname pyblock
 Summary:	Python modules for dealing with block devices
-Summary(pl.UTF-8):   Moduły Pythona do obsługi urządzeń blokowych
+Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń blokowych
 Name:		python-%{realname}
 Version:	0.15
 Release:	2
