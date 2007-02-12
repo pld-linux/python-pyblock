@@ -1,6 +1,6 @@
 %define realname pyblock
 Summary:	Python modules for dealing with block devices
-Summary(pl):	Modu≥y Pythona do obs≥ugi urz±dzeÒ blokowych
+Summary(pl.UTF-8):   Modu≈Çy Pythona do obs≈Çugi urzƒÖdze≈Ñ blokowych
 Name:		python-%{realname}
 Version:	0.15
 Release:	2
@@ -24,8 +24,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 The pyblock contains Python modules for dealing with block devices.
 
-%description -l pl
-Pakiet pyblock zawiera modu≥y Pythona do obs≥ugi urz±dzeÒ blokowych.
+%description -l pl.UTF-8
+Pakiet pyblock zawiera modu≈Çy Pythona do obs≈Çugi urzƒÖdze≈Ñ blokowych.
 
 %prep
 %setup -q -n %{realname}-%{version}
