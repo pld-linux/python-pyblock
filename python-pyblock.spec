@@ -2,12 +2,12 @@
 Summary:	Python modules for dealing with block devices
 Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń blokowych
 Name:		python-%{realname}
-Version:	0.15
-Release:	2
+Version:	0.30
+Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	%{realname}-%{version}.tar.bz2
-# Source0-md5:	a201b09eb86a748b0d41bd5671e7ae8f
+# Source0-md5:	a245a890688e149341de28d151d09acc
 Patch0:		%{name}-ULLLLLL.patch
 Patch1:		%{name}-optflags.patch
 Patch2:		%{name}-fix.patch
@@ -55,7 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %dir %{py_sitedir}/block
-%attr(755,root,root) %{py_sitedir}/block/bdevidmodule.so
 %attr(755,root,root) %{py_sitedir}/block/dmmodule.so
 %attr(755,root,root) %{py_sitedir}/block/dmraidmodule.so
 %{py_sitedir}/block/*.py[co]

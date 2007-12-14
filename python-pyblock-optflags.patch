@@ -1,12 +1,11 @@
---- pyblock-0.15/Makefile~	2006-02-23 05:32:15.000000000 +0200
-+++ pyblock-0.15/Makefile	2006-05-20 04:14:11.030630136 +0300
-@@ -4,7 +4,8 @@
- DEBUGSRC := "/usr/src/debug"
+--- pyblock-0.30/Makefile~	2007-12-14 15:51:04.000000000 +0100
++++ pyblock-0.30/Makefile	2007-12-14 15:52:52.197978950 +0100
+@@ -5,7 +5,7 @@
  DEBUGLIB := "/usr/lib/debug"
  CC := gcc
--CFLAGS := -g -I/usr/include/python2.4 -Wall -Werror -fPIC
-+OPTFLAGS := -g
-+CFLAGS := $(OPTFLAGS) -I/usr/include/python2.4 -Wall -Werror -fPIC
+ PYVER := $(shell python -c "import sys; print sys.version[0:3]")
+-CFLAGS := -g -I/usr/include/python$(PYVER) -Wall -Werror -fPIC
++CFLAGS := $(OPTFLAGS) -I/usr/include/python$(PYVER) -Wall -Werror -fPIC
  LDFLAGS := -shared
  
- VERSION = 0.15
+ VERSION = 0.30
