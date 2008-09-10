@@ -6,6 +6,7 @@ Version:	0.30
 Release:	1
 License:	GPL
 Group:		Libraries/Python
+# https://fedorahosted.org/releases/p/y/pyblock/ (not yet)
 Source0:	%{realname}-%{version}.tar.bz2
 # Source0-md5:	a245a890688e149341de28d151d09acc
 Patch0:		%{name}-ULLLLLL.patch
