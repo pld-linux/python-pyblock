@@ -2,13 +2,13 @@
 Summary:	Python modules for dealing with block devices
 Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń blokowych
 Name:		python-%{realname}
-Version:	0.30
-Release:	2
+Version:	0.32
+Release:	1
 License:	GPL
 Group:		Libraries/Python
 # https://fedorahosted.org/releases/p/y/pyblock/ (not yet)
 Source0:	%{realname}-%{version}.tar.bz2
-# Source0-md5:	a245a890688e149341de28d151d09acc
+# Source0-md5:	339b06ac1eb48dde8a54fbb2e174b26b
 Patch0:		%{name}-ULLLLLL.patch
 Patch1:		%{name}-optflags.patch
 Patch2:		%{name}-fix.patch
