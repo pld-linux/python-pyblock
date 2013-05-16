@@ -1,23 +1,24 @@
-%define realname pyblock
+%define	dmrver	1.0.0-0.rc15
+%define	dmver	1.02.54-3
+%define	module	pyblock
 Summary:	Python modules for dealing with block devices
 Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń blokowych
-Name:		python-%{realname}
-Version:	0.32
-Release:	3
-License:	GPL
+Name:		python-%{module}
+Version:	0.53
+Release:	1
+License:	GPL v2 or GPL v3
 Group:		Libraries/Python
-# https://fedorahosted.org/releases/p/y/pyblock/ (not yet)
-Source0:	%{realname}-%{version}.tar.bz2
-# Source0-md5:	339b06ac1eb48dde8a54fbb2e174b26b
-Patch0:		%{name}-ULLLLLL.patch
-Patch1:		%{name}-optflags.patch
-Patch2:		%{name}-fix.patch
-BuildRequires:	device-mapper-devel >= 1.02.05-0.3
-BuildRequires:	dmraid-devel >= 1.0.0-0.rc15.1
+Source0:	https://fedorahosted.org/releases/p/y/pyblock/pyblock-%{version}.tar.bz2
+# Source0-md5:	f6d33a8362dee358517d0a9e2ebdd044
+URL:		http://fedoraproject.org/wiki/Anaconda
+BuildRequires:	device-mapper-devel >= %{dmver}
+BuildRequires:	dmraid-devel >= %{dmrver}
+BuildRequires:	gettext
 BuildRequires:	libselinux-devel
+BuildRequires:	libsepol-devel
 BuildRequires:	python-devel
-Requires:	device-mapper >= 1.02.02
-ExcludeArch:	s390 s390x
+Requires:	device-mapper >= %{dmver}
+Requires:	python-parted
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		specflags	-fno-strict-aliasing
@@ -29,10 +30,7 @@ The pyblock contains Python modules for dealing with block devices.
 Pakiet pyblock zawiera moduły Pythona do obsługi urządzeń blokowych.
 
 %prep
-%setup -q -n %{realname}-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%setup -q -n %{module}-%{version}
 
 %build
 %{__make} -j1 \
@@ -41,10 +39,11 @@ Pakiet pyblock zawiera moduły Pythona do obsługi urządzeń blokowych.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	SITELIB=%{py_sitedir}
+
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{module}-%{version}
 
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
