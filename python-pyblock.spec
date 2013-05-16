@@ -17,6 +17,7 @@ BuildRequires:	gettext
 BuildRequires:	libselinux-devel
 BuildRequires:	libsepol-devel
 BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
 Requires:	device-mapper >= %{dmver}
 Requires:	python-parted
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
