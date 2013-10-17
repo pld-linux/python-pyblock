@@ -18,7 +18,9 @@ BuildRequires:	libselinux-devel
 BuildRequires:	libsepol-devel
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	device-mapper >= %{dmver}
+Requires:	dmraid >= %{dmrver}
 Requires:	python-parted
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
