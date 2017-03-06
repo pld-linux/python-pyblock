@@ -5,11 +5,12 @@ Summary:	Python modules for dealing with block devices
 Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń blokowych
 Name:		python-%{module}
 Version:	0.53
-Release:	4
+Release:	5
 License:	GPL v2 or GPL v3
 Group:		Libraries/Python
 Source0:	https://fedorahosted.org/releases/p/y/pyblock/pyblock-%{version}.tar.bz2
 # Source0-md5:	f6d33a8362dee358517d0a9e2ebdd044
+Patch0:		build.patch
 URL:		http://fedoraproject.org/wiki/Anaconda
 BuildRequires:	device-mapper-devel >= %{dmver}
 BuildRequires:	dmraid-devel >= %{dmrver}
@@ -34,6 +35,7 @@ Pakiet pyblock zawiera moduły Pythona do obsługi urządzeń blokowych.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
 %build
 %{__make} -j1 \
