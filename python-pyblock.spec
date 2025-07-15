@@ -35,7 +35,7 @@ Pakiet pyblock zawiera moduły Pythona do obsługi urządzeń blokowych.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} -j1 \
